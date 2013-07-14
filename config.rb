@@ -1,3 +1,5 @@
+require 'slim'
+
 ###
 # Compass
 ###
@@ -50,6 +52,22 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+# This settings from http://qiita.com/yterajima/items/d7deec7cc0caaf95982e
+# Slim setteings
+Slim::Engine.set_default_options :pretty => true
+# shortcut
+Slim::Engine.set_default_options :shortcut => {
+  '#' => {:tag => 'div', :attr => 'id'},
+  '.' => {:tag => 'div', :attr => 'class'},
+  '&' => {:tag => 'input', :attr => 'type'}
+}
+#set :slim, :layout_engine => :slim
+
+# Markdown settings
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true
+set :markdown, :fenced_code_blocks => true, :with_toc_data => true
+set :markdown_engine, :redcarpet
 
 # Build-specific configuration
 configure :build do
