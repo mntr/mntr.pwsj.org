@@ -47,6 +47,20 @@ require 'slim'
 #   end
 # end
 
+activate :blog do |blog|
+  blog.name = "dev"
+  blog.prefix = "blog/dev/"
+  blog.sources = "dev-:year-:month-:day-:title.html"
+  blog.permalink = ":title.html"
+end
+
+activate :blog do |blog|
+  blog.name = "news"
+  blog.prefix = "blog/news/"
+  blog.sources = "news-:year-:month-:day-:title.html"
+  blog.permalink = ":title.html"
+end
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
