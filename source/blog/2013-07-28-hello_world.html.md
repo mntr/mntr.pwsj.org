@@ -29,7 +29,6 @@ int main(int argc, char[] *argv){
 
 ### 表のテスト。
 
-|------------+-------------+--------------|
 | Left align | Right align | Center align |
 |:-----------|------------:|:------------:|
 | This       |        This |     This     |
@@ -38,5 +37,3 @@ int main(int argc, char[] *argv){
 | be         |          be |      be      |
 | left       |       right |    center    |
 | aligned    |     aligned |   aligned    |
-|------------+-------------+--------------|
-
