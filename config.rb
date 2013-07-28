@@ -38,7 +38,7 @@ require 'slim'
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# activate :livereload
+ activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -69,6 +69,15 @@ set :markdown, :tables => true, :autolink => true, :gh_blockcode => true
 set :markdown, :fenced_code_blocks => true, :with_toc_data => true
 set :markdown_engine, :redcarpet
 
+# Blog Settings
+activate :blog do |blog|
+  blog.prefix = "blog"
+  blog.permalink = ":year/:month/:day/:title.html"
+  blog.taglink = "categories/:tag.html"
+end
+
+activate :directory_indexes
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -86,3 +95,5 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+Time.zone = "Tokyo"
